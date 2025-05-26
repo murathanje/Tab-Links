@@ -16,22 +16,10 @@ const Footer = ({ className }: FooterProps) => {
             <h3 className="text-lg font-medium text-primary">Tabs Link Sharing</h3>
             <p className="text-xs text-muted-foreground mt-1">Simplify your browsing experience</p>
           </div>
-          
-          <div className="flex space-x-8">
-            <Link href="#features" className="text-muted-foreground hover:text-primary transition-colors">
-              Features
-            </Link>
-            <Link href="#download" className="text-muted-foreground hover:text-primary transition-colors">
-              Download
-            </Link>
-            <Link href="#about" className="text-muted-foreground hover:text-primary transition-colors">
-              About
-            </Link>
-          </div>
-          
+                    
           <div className="flex items-center">
             <a 
-              href="#" 
+              href="#"  
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="GitHub"
               target="_blank"

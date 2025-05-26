@@ -1,21 +1,23 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { DotPattern } from "@/components/ui/dot-pattern";
-import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-20">
+    <div className="flex flex-col gap-20 ">
       {/* Hero Section */}
-      <section className="py-20 relative">
+      <section className="w-full py-20 relative overflow-hidden ">
         {/* Hero-specific dot pattern */}
         <DotPattern 
           variant="center" 
           intensity="strong" 
-          className="max-w-6xl"
+          className="max-w"
         />
         
         <div className="max-w-4xl mx-auto text-center">
@@ -35,25 +37,74 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Hero Image */}
-        <div className="mt-16 relative max-w-4xl mx-auto">
-          <div className="bg-card rounded-lg border shadow-md p-2 overflow-hidden backdrop-blur-sm bg-white/80">
-            <div className="aspect-video rounded bg-muted relative flex items-center justify-center">
-              <p className="text-muted-foreground">Extension Screenshot</p>
-            </div>
-          </div>
+        {/* New Image Display Area - Updated for new layout and clipping */}
+        <div 
+          className="relative max-w-5xl mx-auto mt-16 sm:mt-24 h-[600px] sm:h-[650px]"
+          style={{ clipPath: 'inset(-100vh -20px 0px -20px)' }}
+        >
+          {/* Image ss1.png (formerly Central, was ss.png) - Central, Front, Straight, Largest - Adjusted objectFit and objectPosition */}
+          <motion.div 
+            className="absolute left-1/2 top-0 -translate-x-1/2 transform rotate-0 w-96 h-[570px] sm:w-[420px] sm:h-[680px] bg-card rounded-xl border shadow-2xl p-1.5 overflow-hidden z-20"
+            initial={{ zIndex: 20 }}
+            whileHover={{ scale: 1.07, rotate: 1, y: -5 }} 
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          >
+            <Image 
+              src="/ss.png"
+              alt="App Screenshot Central" 
+              layout="fill" 
+              objectFit="cover"
+              style={{ objectPosition: "top" }}
+              className="rounded-md" 
+            />
+          </motion.div>
+
+          {/* Image ss.png (formerly Left, was ss1.png) - Behind, Left, Angled Initially - Positioned from top */} 
+          <motion.div 
+            className="absolute left-1/2 top-0 -translate-x-[85%] sm:-translate-x-[90%] transform w-80 h-[512px] sm:w-96 sm:h-[570px] bg-card rounded-xl border shadow-xl p-1.5 overflow-hidden z-10"
+            initial={{ rotate: -15, zIndex: 10 }}
+            whileHover={{ scale: 1.1, rotate: 0, y: -15, zIndex: 30 }}
+            transition={{ type: "spring", stiffness: 250, damping: 22 }}
+          >
+            <Image 
+              src="/ss1.png"
+              alt="App Screenshot Left" 
+              layout="fill" 
+              objectFit="contain" 
+              className="rounded-md" 
+            />
+          </motion.div>
+
+          {/* Image ss2.png - Behind, Right, Angled Initially - Positioned from top */}
+          <motion.div 
+            className="absolute left-1/2 top-0 translate-x-[-15%] sm:translate-x-[-10%] transform w-80 h-[512px] sm:w-96 sm:h-[570px] bg-card rounded-xl border shadow-xl p-1.5 overflow-hidden z-10"
+            initial={{ rotate: 15, zIndex: 10 }}
+            whileHover={{ scale: 1.1, rotate: 0, y: -15, zIndex: 30 }}
+            transition={{ type: "spring", stiffness: 250, damping: 22 }}
+          >
+            <Image 
+              src="/ss2.png"
+              alt="App Screenshot Right" 
+              layout="fill" 
+              objectFit="contain" 
+              className="rounded-md" 
+            />
+          </motion.div>
           
-          {/* Decorative elements */}
-          <div className="absolute -z-10 -top-10 -left-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
-          <div className="absolute -z-10 -bottom-10 -right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
+          {/* Decorative blurs - repositioned */}
+          <div className="absolute -z-10 top-1/4 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl opacity-60"></div>
+          <div className="absolute -z-10 bottom-1/4 right-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl opacity-60"></div>
         </div>
       </section>
 
       {/* Features Section */}
       <section id="features" className="py-16 relative">
         {/* Feature section dot pattern */}
-        <DotPattern variant="right" intensity="medium" />
-        
+        <DotPattern
+          variant="center"
+          intensity="light"
+          className="max-w-6xl"
+        />        
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-medium mb-4">Streamlined Tab Management</h2>
@@ -111,13 +162,6 @@ export default function Home() {
 
       {/* Download Section */}
       <section id="download" className="py-16 relative">
-        {/* Download section dot pattern */}
-        <DotPattern 
-          variant="full" 
-          intensity="strong" 
-          className="[mask-image:linear-gradient(180deg,transparent,white_40%,transparent)]"
-        />
-        
         <div className="container mx-auto px-4 relative z-10">
           <Card className="max-w-3xl mx-auto border shadow-md backdrop-blur-sm bg-white/80">
             <CardHeader className="text-center">
