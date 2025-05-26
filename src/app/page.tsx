@@ -42,7 +42,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="shadow-md hover:shadow-lg transition-all">
-              <Link href="#download">Get the Extension</Link>
+              <Link href="https://github.com/murathanje/Tab-Links/releases/" target="_blank" rel="noopener noreferrer">Get the Extension</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="shadow-sm hover:shadow-md transition-all">
               <Link href="#features">Learn More</Link>
@@ -219,7 +219,7 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <div className="flex justify-center mb-8">
-                <Link href="https://github.com/murathanje/Tab-Links" target="_blank" rel="noopener noreferrer">
+                <Link href="https://github.com/murathanje/Tab-Links/releases/" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" asChild className="flex items-center gap-2 shadow-lg hover:shadow-xl transition-all">
                     <div>
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
@@ -256,7 +256,7 @@ export default function Home() {
             <p className="text-muted-foreground">
               This project is open source and available on GitHub. Contributions are welcome!
             </p>
-            <Link href="https://github.com/murathanje/Tab-Links" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/murathanje/Tab-Links/releases/" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="mt-6" asChild>
                 <div>
                   <svg className="mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
