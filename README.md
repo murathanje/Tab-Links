@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tabs Link Sharing - Promotional Website
 
-## Getting Started
+| Landing Page                                                                                                 | Home Page                                                                                                           |
+| :-----------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------: |
+| [![Tabs Link Sharing Desktop View](public/ss.png)](public/ss.png) | [![Tabs Link Sharing Mobile View](public/ss1.png)](public/ss1.png)  |
 
-First, run the development server:
+This repository contains the source code for the promotional website of **Tabs Link Sharing**, a modern browser extension designed to help you effortlessly convert all your open browser tabs into a single, shareable link.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The website is built with Next.js, TypeScript, and Tailwind CSS, featuring a sleek, responsive design with engaging animations and a clear presentation of the extension's capabilities.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features (Website)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-   **Modern & Responsive Design:** Adapts beautifully to all screen sizes, from mobile to desktop.
+-   **Interactive Hero Section:**
+    -   **Desktop:** A dynamic, multi-image showcase with hover animations powered by Framer Motion.
+    -   **Mobile:** A touch-friendly, swipeable image slider built with SwiperJS.
+-   **Clear Information Architecture:** Dedicated sections for showcasing extension features, download links (pointing to the GitHub repository), and project details.
+-   **Smooth User Experience:** Smooth scrolling, subtle animations, and a professional look and feel.
+-   **Dark Mode Support:** (If applicable - based on your globals.css, it seems you have dark mode theming)
+-   **Optimized for Performance:** Leveraging Next.js for fast load times and optimized assets.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Technologies Used
 
-## Learn More
+-   **Framework:** [Next.js](https://nextjs.org/) (App Router)
+-   **Language:** [TypeScript](https://www.typescriptlang.org/)
+-   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+-   **UI Components:** [Shadcn/UI](https://ui.shadcn.com/) (Buttons, Cards, Sheet, etc.)
+-   **Animations:** [Framer Motion](https://www.framer.com/motion/)
+-   **Mobile Slider:** [SwiperJS](https://swiperjs.com/)
+-   **Icons:** [Lucide React](https://lucide.dev/)
+-   **Font:** [Geist](https://vercel.com/font) (via `next/font`)
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Getting Started (Local Development)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Prerequisites
 
-## Deploy on Vercel
+-   [Node.js](https://nodejs.org/) (v18.x or later recommended)
+-   [npm](https://www.npmjs.com/), [yarn](https://yarnpkg.com/), or [pnpm](https://pnpm.io/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Installation & Running
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/your-repo-name.git 
+    # Replace with your actual repository URL
+    cd your-repo-name
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    # yarn install
+    # or
+    # pnpm install
+    ```
+
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    # or
+    # yarn dev
+    # or
+    # pnpm dev
+    ```
+
+4.  **Open your browser:**
+    Navigate to [http://localhost:3000](http://localhost:3000) to see the website. The page auto-updates as you edit files in the `src` directory.
+
+## 📂 Project Structure (Overview)
+
+-   `src/app/`: Contains the main application pages (e.g., `page.tsx`) and layout (`layout.tsx`).
+-   `src/components/`: Houses reusable React components used across the website (e.g., `Header.tsx`, `Footer.tsx`).
+-   `src/components/ui/`: Stores UI primitive components, typically managed by Shadcn/UI.
+-   `public/`: For static assets like images (e.g., `/icon.png`, `/ss.png`) and other public files.
+-   `src/lib/`: Utility functions (e.g., `utils.ts` for `cn`).
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/your-username/your-repo-name/issues) (replace with your actual issues link).
+
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'')
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the `LICENSE.md` file for details (if you add one). If no `LICENSE.md`
