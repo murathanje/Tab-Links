@@ -19,6 +19,35 @@ The website is built with Next.js, TypeScript, and Tailwind CSS, featuring a sle
 -   **Dark Mode Support:** (If applicable - based on your globals.css, it seems you have dark mode theming)
 -   **Optimized for Performance:** Leveraging Next.js for fast load times and optimized assets.
 
+## 📥 Installing the Browser Extension
+
+You can install the **Tabs Link Sharing** browser extension by downloading the latest release from our GitHub repository.
+
+1.  **Download the Extension:**
+    *   Go to the [Tabs Link Sharing Releases Page](https://github.com/murathanje/Tab-Links/releases/).
+    *   Under the latest release (e.g., `v.0.1.0`), download the `project.zip` file (or the relevant ZIP file for the extension).
+
+2.  **Enable Developer Mode in Your Browser:**
+    *   **Google Chrome / Microsoft Edge (Chromium):**
+        1.  Open your browser and navigate to `chrome://extensions` (for Chrome) or `edge://extensions` (for Edge).
+        2.  In the top right corner, toggle on "Developer mode".
+    *   **Mozilla Firefox:**
+        1.  Open Firefox and navigate to `about:debugging#/runtime/this-firefox`.
+        2.  Click "Load Temporary Add-on...".
+
+3.  **Load the Extension:**
+    *   **Google Chrome / Microsoft Edge (Chromium):**
+        1.  After enabling Developer mode, click on the "Load unpacked" button that appears.
+        2.  Navigate to the folder where you extracted the contents of the downloaded ZIP file.
+        3.  Select the folder (it should contain a `manifest.json` file and other extension files).
+    *   **Mozilla Firefox:**
+        1.  After clicking "Load Temporary Add-on...", navigate to the downloaded ZIP file and select it, or navigate to the extracted folder and select the `manifest.json` file.
+
+4.  **Pin the Extension (Recommended):**
+    *   Once installed, you should see the Tabs Link Sharing icon in your browser's toolbar (you might need to click the "Extensions" puzzle icon to find and pin it). Pinning it will make it easily accessible.
+
+Now you're ready to use the Tabs Link Sharing extension!
+
 ## 🛠️ Technologies Used
 
 -   **Framework:** [Next.js](https://nextjs.org/) (App Router)
