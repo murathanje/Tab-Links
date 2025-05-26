@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 
@@ -19,7 +18,7 @@ const Footer = ({ className }: FooterProps) => {
                     
           <div className="flex items-center">
             <a 
-              href="#"  
+              href="https://github.com/murathanje/Tab-Links"
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="GitHub"
               target="_blank"
