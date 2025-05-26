@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useId, SVGProps } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -54,7 +54,6 @@ interface DotPatternProps {
   className?: string;
   variant?: keyof typeof variantMap;
   intensity?: keyof typeof intensityMap;
-  [key: string]: any;
 }
 
 function DotPattern({
@@ -69,7 +68,7 @@ function DotPattern({
   variant,
   intensity,
   ...props
-}: DotPatternProps) {
+}: DotPatternProps & SVGProps<SVGSVGElement>) {
   const id = useId();
 
   const intensitySettings = intensity ? intensityMap[intensity] : null;
