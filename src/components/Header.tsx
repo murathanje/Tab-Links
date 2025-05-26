@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { MenuIcon } from 'lucide-react';
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 interface HeaderProps {
   className?: string;
@@ -62,6 +63,9 @@ const Header = ({ className }: HeaderProps) => {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
+              <SheetTitle>
+                <VisuallyHidden>Main Navigation Menu</VisuallyHidden>
+              </SheetTitle>
               <div className="grid gap-6 p-6">
                 <Link href="/" className="flex items-center space-x-2 mb-4">
                   <Image 

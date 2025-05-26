@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+// import 'embla-carousel-react/embla.css'; // Removed Embla CSS
+import 'swiper/css'; // Core Swiper styles
+import 'swiper/css/navigation'; // Optional: if you want navigation buttons
+import 'swiper/css/pagination'; // Optional: if you want pagination dots
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 

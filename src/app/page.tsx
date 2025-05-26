@@ -7,8 +7,21 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Separator } from "@/components/ui/separator";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { motion } from "framer-motion";
+// Removed Embla import: import useEmblaCarousel from 'embla-carousel-react';
+
+// Swiper imports
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+
+const heroImages = [
+  { src: "/ss.png", alt: "App Screenshot 1", id: "ss" },
+  { src: "/ss1.png", alt: "App Screenshot 2", id: "ss1" },
+  { src: "/ss2.png", alt: "App Screenshot 3", id: "ss2" },
+];
 
 export default function Home() {
+  // Removed Embla ref: const [emblaRef] = useEmblaCarousel({ loop: true });
+
   return (
     <div className="flex flex-col gap-20 ">
       {/* Hero Section */}
@@ -37,12 +50,12 @@ export default function Home() {
           </div>
         </div>
 
-        {/* New Image Display Area - Updated for new layout and clipping */}
+        {/* Desktop Image Display Area (Existing Layout) - Hidden on mobile */}
         <div 
-          className="relative max-w-5xl mx-auto mt-16 sm:mt-24 h-[600px] sm:h-[650px]"
+          className="relative max-w-5xl mx-auto mt-16 sm:mt-24 h-[600px] sm:h-[650px] hidden sm:block"
           style={{ clipPath: 'inset(-100vh -20px 0px -20px)' }}
         >
-          {/* Image ss1.png (formerly Central, was ss.png) - Central, Front, Straight, Largest - Adjusted objectFit and objectPosition */}
+          {/* Image ss1.png (formerly Central, was ss.png) - Central, Front, Straight, Largest */}
           <motion.div 
             className="absolute left-1/2 top-0 -translate-x-1/2 transform rotate-0 w-96 h-[570px] sm:w-[420px] sm:h-[680px] bg-card rounded-xl border shadow-2xl p-1.5 overflow-hidden z-20"
             initial={{ zIndex: 20 }}
@@ -59,7 +72,7 @@ export default function Home() {
             />
           </motion.div>
 
-          {/* Image ss.png (formerly Left, was ss1.png) - Behind, Left, Angled Initially - Positioned from top */} 
+          {/* Image ss.png (formerly Left, was ss1.png) - Behind, Left, Angled Initially */} 
           <motion.div 
             className="absolute left-1/2 top-0 -translate-x-[85%] sm:-translate-x-[90%] transform w-80 h-[512px] sm:w-96 sm:h-[570px] bg-card rounded-xl border shadow-xl p-1.5 overflow-hidden z-10"
             initial={{ rotate: -15, zIndex: 10 }}
@@ -70,12 +83,12 @@ export default function Home() {
               src="/ss1.png"
               alt="App Screenshot Left" 
               layout="fill" 
-              objectFit="contain" 
+              objectFit="contain"
               className="rounded-md" 
             />
           </motion.div>
 
-          {/* Image ss2.png - Behind, Right, Angled Initially - Positioned from top */}
+          {/* Image ss2.png - Behind, Right, Angled Initially */}
           <motion.div 
             className="absolute left-1/2 top-0 translate-x-[-15%] sm:translate-x-[-10%] transform w-80 h-[512px] sm:w-96 sm:h-[570px] bg-card rounded-xl border shadow-xl p-1.5 overflow-hidden z-10"
             initial={{ rotate: 15, zIndex: 10 }}
@@ -86,7 +99,7 @@ export default function Home() {
               src="/ss2.png"
               alt="App Screenshot Right" 
               layout="fill" 
-              objectFit="contain" 
+              objectFit="contain"
               className="rounded-md" 
             />
           </motion.div>
@@ -94,6 +107,40 @@ export default function Home() {
           {/* Decorative blurs - repositioned */}
           <div className="absolute -z-10 top-1/4 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl opacity-60"></div>
           <div className="absolute -z-10 bottom-1/4 right-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl opacity-60"></div>
+        </div>
+
+        {/* Mobile Image Slider (SwiperJS) - Hidden on sm and larger */}
+        <div className="mt-16 block sm:hidden">
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]} // Add modules
+            spaceBetween={20} // Space between slides
+            slidesPerView={1} // Show one slide at a time
+            navigation // Enable navigation arrows (optional)
+            pagination={{ clickable: true }} // Enable clickable pagination dots
+            loop={true} // Enable continuous loop mode
+            autoplay={{ delay: 4000, disableOnInteraction: false }} // Autoplay configuration
+            className="max-w-md mx-auto rounded-xl hero-mobile-swiper" // Added hero-mobile-swiper class
+          >
+            {heroImages.map((img, index) => (
+              <SwiperSlide key={img.id || index} className="p-2">
+                <motion.div
+                  className="relative w-full h-[520px] bg-card rounded-xl border shadow-xl p-1.5 overflow-hidden"
+                  whileHover={{ scale: 1.03, y: -3 }} // Optional: keep framer-motion hover effect
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    layout="fill"
+                    objectFit="cover"
+                    style={{ objectPosition: "top" }}
+                    className="rounded-md"
+                    priority={index === 0}
+                  />
+                </motion.div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
 

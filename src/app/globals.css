@@ -120,3 +120,45 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom Swiper Navigation Arrows for Hero Mobile Slider */
+.hero-mobile-swiper .swiper-button-next,
+.hero-mobile-swiper .swiper-button-prev {
+  --swiper-navigation-size: 28px; /* Smaller size */
+  color: var(--color-primary); /* Use your primary color, or adjust as needed */
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.hero-mobile-swiper .swiper-button-next:hover,
+.hero-mobile-swiper .swiper-button-prev:hover {
+  color: var(--color-primary-foreground); /* Or another hover color */
+  background-color: var(--color-primary); /* Optional: background on hover */
+  border-radius: 9999px; /* Make it circular on hover if adding background */
+}
+
+/* Optional: If you want to replace the default arrow icons with simpler chevrons */
+.hero-mobile-swiper .swiper-button-next::after,
+.hero-mobile-swiper .swiper-button-prev::after {
+  font-family: sans-serif; /* Use a common font for these characters */
+  font-weight: bold;
+}
+
+.hero-mobile-swiper .swiper-button-prev::after {
+  content: '‹';
+}
+
+.hero-mobile-swiper .swiper-button-next::after {
+  content: '›';
+}
+
+/* Styling for Swiper Pagination Dots to match primary color */
+.hero-mobile-swiper .swiper-pagination-bullet {
+  background-color: var(--color-muted-foreground); /* Default color for inactive dots */
+  opacity: 0.7;
+  transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.hero-mobile-swiper .swiper-pagination-bullet-active {
+  background-color: var(--color-primary); /* Active dot color */
+  opacity: 1;
+}
